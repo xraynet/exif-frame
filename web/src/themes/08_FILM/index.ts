@@ -6,27 +6,27 @@ import { ThemeOption, ThemeOptionInput } from '../../pages/theme/types/theme-opt
 import Font from '../../fonts';
 
 const FILM_OPTIONS: ThemeOption[] = [
-  { id: 'ARTIST', type: 'string', default: '', description: 'your name' },
-  { id: 'FONT_FAMILY', type: 'select', options: ['Barlow', ...Object.values(Font)], default: 'digital-7', description: 'ex. din-alternate-bold, digital-7, Barlow, Arial, sans-serif' },
-  { id: 'TEXT_COLOR', type: 'color', default: '#FFA500', description: 'default is orange hex code' },
-  { id: 'TEXT_ALPHA', type: 'range-slider', default: 1, min: 0, max: 1, step: 0.01, description: '0 - 1' },
-  { id: 'BACKGROUND_COLOR', type: 'color', default: '#000000', description: '#ffffff is white, #000000 is black' },
-  { id: 'PADDING_TOP', type: 'number', default: 0, description: 'px' },
-  { id: 'PADDING_BOTTOM', type: 'number', default: 0, description: 'px' },
-  { id: 'PADDING_LEFT', type: 'number', default: 0, description: 'px' },
-  { id: 'PADDING_RIGHT', type: 'number', default: 0, description: 'px' },
+  { id: '作者 ARTIST', type: 'string', default: '', description: 'your name' },
+  { id: '字体 FONT_FAMILY', type: 'select', options: ['Barlow', ...Object.values(Font)], default: 'digital-7', description: 'ex. din-alternate-bold, digital-7, Barlow, Arial, sans-serif' },
+  { id: '文字颜色 TEXT_COLOR', type: 'color', default: '#FFA500', description: 'default is orange hex code' },
+  { id: '文字透明度 TEXT_ALPHA', type: 'range-slider', default: 1, min: 0, max: 1, step: 0.01, description: '0 - 1' },
+  { id: '背景颜色 BACKGROUND_COLOR', type: 'color', default: '#000000', description: '#ffffff is white, #000000 is black' },
+  { id: '上边距 PADDING_TOP', type: 'number', default: 0, description: 'px' },
+  { id: '下边距 PADDING_BOTTOM', type: 'number', default: 0, description: 'px' },
+  { id: '左边距 PADDING_LEFT', type: 'number', default: 0, description: 'px' },
+  { id: '右边距 PADDING_RIGHT', type: 'number', default: 0, description: 'px' },
 ];
 
 const FILM_FUNC: ThemeFunc = (photo: Photo, input: ThemeOptionInput, store: Store) => {
-  const ARTIST = (input.get('ARTIST') as string).trim();
-  const FONT_FAMILY = (input.get('FONT_FAMILY') as string).trim();
-  const TEXT_COLOR = input.get('TEXT_COLOR') as string;
-  const TEXT_ALPHA = input.get('TEXT_ALPHA') as number;
-  const BACKGROUND_COLOR = (input.get('BACKGROUND_COLOR') as string).trim();
-  const PADDING_TOP = input.get('PADDING_TOP') as number;
-  const PADDING_BOTTOM = input.get('PADDING_BOTTOM') as number;
-  const PADDING_LEFT = input.get('PADDING_LEFT') as number;
-  const PADDING_RIGHT = input.get('PADDING_RIGHT') as number;
+  const ARTIST = (input.get('作者 ARTIST') as string).trim();
+  const FONT_FAMILY = (input.get('字体 FONT_FAMILY') as string).trim();
+  const TEXT_COLOR = input.get('文字颜色 TEXT_COLOR') as string;
+  const TEXT_ALPHA = input.get('文字透明度 TEXT_ALPHA') as number;
+  const BACKGROUND_COLOR = (input.get('背景颜色 BACKGROUND_COLOR') as string).trim();
+  const PADDING_TOP = input.get('上边距 PADDING_TOP') as number;
+  const PADDING_BOTTOM = input.get('下边距 PADDING_BOTTOM') as number;
+  const PADDING_LEFT = input.get('左边距 PADDING_LEFT') as number;
+  const PADDING_RIGHT = input.get('右边距 PADDING_RIGHT') as number;
 
   const canvas = sandbox(photo, {
     targetRatio: store.ratio,

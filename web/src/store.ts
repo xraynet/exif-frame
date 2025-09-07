@@ -175,7 +175,7 @@ const useStore = create<Store>((set) => ({
   languagePopover: false,
   setLanguagePopover: (opened: boolean) => set({ languagePopover: opened }),
 
-  quality: parseInt(localStorage.getItem('quality') || '95'),
+  quality: parseInt(localStorage.getItem('quality') || '100'),
   setQuality: (quality: number) =>
     set(() => {
       localStorage.setItem('quality', quality.toString());
@@ -282,14 +282,14 @@ const useStore = create<Store>((set) => ({
       return { watermark };
     }),
 
-  exportToJpeg: localStorage.getItem('exportToJpeg') === 'true',
+  exportToJpeg: localStorage.getItem('exportToJpeg') !== 'false',
   setExportToJpeg: (exportToJpeg: boolean) =>
     set(() => {
       localStorage.setItem('exportToJpeg', exportToJpeg.toString());
       return { exportToJpeg };
     }),
 
-  maintainExif: localStorage.getItem('maintainExif') === 'true' || true,
+  maintainExif: localStorage.getItem('maintainExif') !== 'false',
   setMaintainExif: (maintainExif: boolean) =>
     set(() => {
       localStorage.setItem('maintainExif', maintainExif.toString());
@@ -299,7 +299,7 @@ const useStore = create<Store>((set) => ({
   preview: null,
   setPreview: (preview: Photo | null) => set({ preview }),
 
-  focalLength35mmMode: localStorage.getItem('focalLength35mmMode') === 'true',
+  focalLength35mmMode: localStorage.getItem('focalLength35mmMode') !== 'false',
   setFocalLength35mmMode: (focalLength35mmMode: boolean) =>
     set(() => {
       localStorage.setItem('focalLength35mmMode', focalLength35mmMode.toString());

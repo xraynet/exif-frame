@@ -6,7 +6,8 @@ import zh_CN from './translations/zh-CN.json';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
-const supportLanguages = ['en', 'ja', 'ko', 'zh-CN'];
+// const supportLanguages = ['en', 'ja', 'ko', 'zh-CN'];
+const supportLanguages = ['en','zh-CN'];
 
 export { supportLanguages };
 

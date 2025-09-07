@@ -5,21 +5,21 @@ import { ThemeFunc } from '../../core/drawing/theme';
 import { ThemeOption, ThemeOptionInput } from '../../pages/theme/types/theme-option';
 
 const SHOT_ON_ONE_LINE_OPTIONS: ThemeOption[] = [
-  { id: 'BACKGROUND_COLOR', type: 'color', default: '#ffffff', description: '#ffffff is white, #000000 is black' },
-  { id: 'TEXT_COLOR', type: 'color', default: '#000000', description: '#ffffff is white, #000000 is black' },
-  { id: 'PADDING_TOP', type: 'number', default: 0, description: 'px' },
-  { id: 'PADDING_BOTTOM', type: 'number', default: 0, description: 'px' },
-  { id: 'PADDING_LEFT', type: 'number', default: 0, description: 'px' },
-  { id: 'PADDING_RIGHT', type: 'number', default: 0, description: 'px' },
+  { id: '背景颜色 BACKGROUND_COLOR', type: 'color', default: '#ffffff', description: '#ffffff is white, #000000 is black' },
+  { id: '文字颜色 TEXT_COLOR', type: 'color', default: '#000000', description: '#ffffff is white, #000000 is black' },
+  { id: '上边距 PADDING_TOP', type: 'number', default: 0, description: 'px' },
+  { id: '下边距 PADDING_BOTTOM', type: 'number', default: 0, description: 'px' },
+  { id: '左边距 PADDING_LEFT', type: 'number', default: 0, description: 'px' },
+  { id: '右边距 PADDING_RIGHT', type: 'number', default: 0, description: 'px' },
 ];
 
 const SHOT_ON_ONE_LINE_FUNC: ThemeFunc = (photo: Photo, input: ThemeOptionInput, store: Store) => {
-  const BACKGROUND_COLOR = (input.get('BACKGROUND_COLOR') as string).trim();
-  const TEXT_COLOR = input.get('TEXT_COLOR') as string;
-  const PADDING_TOP = input.get('PADDING_TOP') as number;
-  const PADDING_BOTTOM = (input.get('PADDING_BOTTOM') as number) + 200;
-  const PADDING_LEFT = input.get('PADDING_LEFT') as number;
-  const PADDING_RIGHT = input.get('PADDING_RIGHT') as number;
+  const BACKGROUND_COLOR = (input.get('背景颜色 BACKGROUND_COLOR') as string).trim();
+  const TEXT_COLOR = input.get('文字颜色 TEXT_COLOR') as string;
+  const PADDING_TOP = input.get('上边距 PADDING_TOP') as number;
+  const PADDING_BOTTOM = (input.get('下边距 PADDING_BOTTOM') as number) + 200;
+  const PADDING_LEFT = input.get('左边距 PADDING_LEFT') as number;
+  const PADDING_RIGHT = input.get('右边距 PADDING_RIGHT') as number;
   const FONT_SIZE = 70;
 
   const canvas = sandbox(photo, {

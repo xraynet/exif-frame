@@ -21,19 +21,19 @@
   "iso": "ISO",
   "taken-at": "摄于",
 
-  "drag-and-drop-photos-here": "在这里拖放照片",
+  "drag-and-drop-photos-here": "上传照片",
 
-  "root.tab.convert": "转换",
-  "root.tab.theme-settings": "主题设置",
+  "root.tab.convert": "照片列表",
+  "root.tab.theme-settings": "样式设置",
   "root.tab.export-settings": "导出设置",
 
-  "root.convert": "转换",
+  "root.convert": "照片列表",
 
   "root.go-to-top": "转到顶部",
 
   "root.title": "EXIF 边框",
   "root.settings": "设置",
-  "root.themes": "主题",
+  "root.themes": "样式设置",
   "root.themes.preview": "预览",
   "root.themes.list": "列表",
   "root.themes.customize": "自定义",

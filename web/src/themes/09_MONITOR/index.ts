@@ -6,33 +6,33 @@ import { ThemeOption, ThemeOptionInput } from '../../pages/theme/types/theme-opt
 import Font from '../../fonts';
 
 const MONITOR_OPTIONS: ThemeOption[] = [
-  { id: 'BACKGROUND_COLOR', type: 'color', default: '#000000', description: '#ffffff is white, #000000 is black' },
-  { id: 'PADDING_INSIDE', type: 'boolean', default: false, description: 'enable to use inside padding' },
-  { id: 'COMPACT', type: 'boolean', default: false, description: 'enable to reduce exif text width' },
-  { id: 'PADDING_TOP', type: 'number', default: 0, description: 'px' },
-  { id: 'PADDING_BOTTOM', type: 'number', default: 100, description: 'px' },
-  { id: 'PADDING_LEFT', type: 'number', default: 0, description: 'px' },
-  { id: 'PADDING_RIGHT', type: 'number', default: 0, description: 'px' },
-  { id: 'TEXT_COLOR', type: 'color', default: '#ffffff', description: '#ffffff is white, #000000 is black' },
-  { id: 'FONT_STYLE', type: 'select', options: ['normal', 'italic'], default: 'normal', description: 'normal or italic' },
-  { id: 'FONT_WEIGHT', type: 'range-slider', min: 100, max: 900, step: 100, default: 500, description: '100 - 900' },
-  { id: 'FONT_SIZE', type: 'number', default: 70, description: 'px' },
-  { id: 'FONT_FAMILY', type: 'select', options: ['Barlow', ...Object.values(Font)], default: 'Barlow', description: 'ex. din-alternate-bold, digital-7, Barlow, Arial, sans-serif' },
+  { id: '背景颜色 BACKGROUND_COLOR', type: 'color', default: '#000000', description: '#ffffff is white, #000000 is black' },
+  { id: '内边距 PADDING_INSIDE', type: 'boolean', default: false, description: 'enable to use inside padding' },
+  { id: '紧凑模式 COMPACT', type: 'boolean', default: false, description: 'enable to reduce exif text width' },
+  { id: '上边距 PADDING_TOP', type: 'number', default: 0, description: 'px' },
+  { id: '下边距 PADDING_BOTTOM', type: 'number', default: 100, description: 'px' },
+  { id: '左边距 PADDING_LEFT', type: 'number', default: 0, description: 'px' },
+  { id: '右边距 PADDING_RIGHT', type: 'number', default: 0, description: 'px' },
+  { id: '文字颜色 TEXT_COLOR', type: 'color', default: '#ffffff', description: '#ffffff is white, #000000 is black' },
+  { id: '字体样式 FONT_STYLE', type: 'select', options: ['normal', 'italic'], default: 'normal', description: 'normal or italic' },
+  { id: '字体粗细 FONT_WEIGHT', type: 'range-slider', min: 100, max: 900, step: 100, default: 500, description: '100 - 900' },
+  { id: '字体大小 FONT_SIZE', type: 'number', default: 70, description: 'px' },
+  { id: '字体 FONT_FAMILY', type: 'select', options: ['Barlow', ...Object.values(Font)], default: 'Barlow', description: 'ex. din-alternate-bold, digital-7, Barlow, Arial, sans-serif' },
 ];
 
 const MONITOR_FUNC: ThemeFunc = (photo: Photo, input: ThemeOptionInput, store: Store) => {
-  const BACKGROUND_COLOR = (input.get('BACKGROUND_COLOR') as string).trim();
-  const PADDING_INSIDE = input.get('PADDING_INSIDE') as boolean;
-  const COMPACT = input.get('COMPACT') as boolean;
-  const PADDING_TOP = input.get('PADDING_TOP') as number;
-  const PADDING_BOTTOM = input.get('PADDING_BOTTOM') as number;
-  const PADDING_LEFT = input.get('PADDING_LEFT') as number;
-  const PADDING_RIGHT = input.get('PADDING_RIGHT') as number;
-  const TEXT_COLOR = input.get('TEXT_COLOR') as string;
-  const FONT_STYLE = (input.get('FONT_STYLE') as string).trim();
-  const FONT_WEIGHT = input.get('FONT_WEIGHT') as number;
-  const FONT_SIZE = input.get('FONT_SIZE') as number;
-  const FONT_FAMILY = (input.get('FONT_FAMILY') as string).trim();
+  const BACKGROUND_COLOR = (input.get('背景颜色 BACKGROUND_COLOR') as string).trim();
+  const PADDING_INSIDE = input.get('内边距 PADDING_INSIDE') as boolean;
+  const COMPACT = input.get('紧凑模式 COMPACT') as boolean;
+  const PADDING_TOP = input.get('上边距 PADDING_TOP') as number;
+  const PADDING_BOTTOM = input.get('下边距 PADDING_BOTTOM') as number;
+  const PADDING_LEFT = input.get('左边距 PADDING_LEFT') as number;
+  const PADDING_RIGHT = input.get('右边距 PADDING_RIGHT') as number;
+  const TEXT_COLOR = input.get('文字颜色 TEXT_COLOR') as string;
+  const FONT_STYLE = (input.get('字体样式 FONT_STYLE') as string).trim();
+  const FONT_WEIGHT = input.get('字体粗细 FONT_WEIGHT') as number;
+  const FONT_SIZE = input.get('字体大小 FONT_SIZE') as number;
+  const FONT_FAMILY = (input.get('字体 FONT_FAMILY') as string).trim();
 
   const canvas = sandbox(photo, {
     targetRatio: store.ratio,

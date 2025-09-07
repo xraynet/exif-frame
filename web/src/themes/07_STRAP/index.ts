@@ -57,31 +57,31 @@ supportLogo.set('SONY_LIGHT', loadLogo('/maker/light/sony.png'));
 supportLogo.set('SONY_DARK', loadLogo('/maker/dark/sony.png'));
 
 const STRAP_OPTIONS: ThemeOption[] = [
-  { id: 'ARTIST', type: 'string', default: '', description: 'your name' },
-  { id: 'DARK_MODE', type: 'boolean', default: false, description: 'enable to use dark mode' },
-  { id: 'SECONDARY_TEXT_FONT_WEIGHT', type: 'range-slider', min: 100, max: 900, step: 100, default: 300, description: '100 - 900' },
-  { id: 'PADDING_TOP', type: 'number', default: 0, description: 'px' },
-  { id: 'PADDING_BOTTOM', type: 'number', default: 0, description: 'px' },
-  { id: 'PADDING_LEFT', type: 'number', default: 0, description: 'px' },
-  { id: 'PADDING_RIGHT', type: 'number', default: 0, description: 'px' },
-  { id: 'TEMPLATE1', type: 'string', default: '{ISO}{MM}{F}{SEC}' },
-  { id: 'TEMPLATE2', type: 'string', default: '{MAKER}{BODY}' },
-  { id: 'TEMPLATE3', type: 'string', default: '{TAKEN_AT}' },
-  { id: 'TEMPLATE4', type: 'string', default: '{LENS}' },
+  { id: '作者 ARTIST', type: 'string', default: '', description: 'your name' },
+  { id: '深色模式 DARK_MODE', type: 'boolean', default: false, description: 'enable to use dark mode' },
+  { id: '副文字粗细 SECONDARY_TEXT_FONT_WEIGHT', type: 'range-slider', min: 100, max: 900, step: 100, default: 300, description: '100 - 900' },
+  { id: '上边距 PADDING_TOP', type: 'number', default: 0, description: 'px' },
+  { id: '下边距 PADDING_BOTTOM', type: 'number', default: 0, description: 'px' },
+  { id: '左边距 PADDING_LEFT', type: 'number', default: 0, description: 'px' },
+  { id: '右边距 PADDING_RIGHT', type: 'number', default: 0, description: 'px' },
+  { id: '模板1 TEMPLATE1', type: 'string', default: '{ISO}{MM}{F}{SEC}' },
+  { id: '模板2 TEMPLATE2', type: 'string', default: '{MAKER}{BODY}' },
+  { id: '模板3 TEMPLATE3', type: 'string', default: '{TAKEN_AT}' },
+  { id: '模板4 TEMPLATE4', type: 'string', default: '{LENS}' },
 ];
 
 const STRAP_FUNC: ThemeFunc = (photo: Photo, input: ThemeOptionInput, store: Store) => {
-  const ARTIST = (input.get('ARTIST') as string).trim();
-  const DARK_MODE = input.get('DARK_MODE') as boolean;
-  const SECONDARY_TEXT_FONT_WEIGHT = input.get('SECONDARY_TEXT_FONT_WEIGHT') as number;
-  const PADDING_TOP = input.get('PADDING_TOP') as number;
-  const PADDING_BOTTOM = (input.get('PADDING_BOTTOM') as number) + 300;
-  const PADDING_LEFT = input.get('PADDING_LEFT') as number;
-  const PADDING_RIGHT = input.get('PADDING_RIGHT') as number;
-  const TEMPLATE1 = (input.get('TEMPLATE1') as string).trim();
-  const TEMPLATE2 = (input.get('TEMPLATE2') as string).trim();
-  const TEMPLATE3 = (input.get('TEMPLATE3') as string).trim();
-  const TEMPLATE4 = (input.get('TEMPLATE4') as string).trim();
+  const ARTIST = (input.get('作者 ARTIST') as string).trim();
+  const DARK_MODE = input.get('深色模式 DARK_MODE') as boolean;
+  const SECONDARY_TEXT_FONT_WEIGHT = input.get('副文字粗细 SECONDARY_TEXT_FONT_WEIGHT') as number;
+  const PADDING_TOP = input.get('上边距 PADDING_TOP') as number;
+  const PADDING_BOTTOM = (input.get('下边距 PADDING_BOTTOM') as number) + 300;
+  const PADDING_LEFT = input.get('左边距 PADDING_LEFT') as number;
+  const PADDING_RIGHT = input.get('右边距 PADDING_RIGHT') as number;
+  const TEMPLATE1 = (input.get('模板1 TEMPLATE1') as string).trim();
+  const TEMPLATE2 = (input.get('模板2 TEMPLATE2') as string).trim();
+  const TEMPLATE3 = (input.get('模板3 TEMPLATE3') as string).trim();
+  const TEMPLATE4 = (input.get('模板4 TEMPLATE4') as string).trim();
   const FONT_SIZE = 70;
   const BACKGROUND_COLOR = DARK_MODE ? '#000000' : '#ffffff';
   const PRIMARY_TEXT_COLOR = DARK_MODE ? '#ffffff' : '#000000';

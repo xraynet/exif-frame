@@ -6,23 +6,23 @@ import { ThemeOption, ThemeOptionInput } from '../../pages/theme/types/theme-opt
 import Font from '../../fonts';
 
 const SIMPLE_OPTIONS: ThemeOption[] = [
-  { id: 'LABEL', type: 'string', default: '@username', description: 'ex. @username' },
-  { id: 'FONT_FAMILY', type: 'select', options: ['Barlow', ...Object.values(Font)], default: 'Barlow', description: 'ex. din-alternate-bold, digital-7, Barlow, Arial, sans-serif' },
-  { id: 'PADDING_INSIDE', type: 'boolean', default: false, description: 'enable to use inside padding' },
-  { id: 'PADDING_TOP', type: 'number', default: 100, description: 'px' },
-  { id: 'PADDING_BOTTOM', type: 'number', default: 400, description: 'px' },
-  { id: 'PADDING_LEFT', type: 'number', default: 100, description: 'px' },
-  { id: 'PADDING_RIGHT', type: 'number', default: 100, description: 'px' },
+  { id: '标签 LABEL', type: 'string', default: '@username', description: 'ex. @username' },
+  { id: '字体 FONT_FAMILY', type: 'select', options: ['Barlow', ...Object.values(Font)], default: 'Barlow', description: 'ex. din-alternate-bold, digital-7, Barlow, Arial, sans-serif' },
+  { id: '内边距 PADDING_INSIDE', type: 'boolean', default: false, description: 'enable to use inside padding' },
+  { id: '上边距 PADDING_TOP', type: 'number', default: 100, description: 'px' },
+  { id: '下边距 PADDING_BOTTOM', type: 'number', default: 400, description: 'px' },
+  { id: '左边距 PADDING_LEFT', type: 'number', default: 100, description: 'px' },
+  { id: '右边距 PADDING_RIGHT', type: 'number', default: 100, description: 'px' },
 ];
 
 const SIMPLE_FUNC: ThemeFunc = (photo: Photo, input: ThemeOptionInput, store: Store) => {
-  const LABEL = (input.get('LABEL') as string).trim();
-  const FONT_FAMILY = (input.get('FONT_FAMILY') as string).trim();
-  const PADDING_INSIDE = input.get('PADDING_INSIDE') as boolean;
-  const PADDING_TOP = input.get('PADDING_TOP') as number;
-  const PADDING_BOTTOM = input.get('PADDING_BOTTOM') as number;
-  const PADDING_LEFT = input.get('PADDING_LEFT') as number;
-  const PADDING_RIGHT = input.get('PADDING_RIGHT') as number;
+  const LABEL = (input.get('标签 LABEL') as string).trim();
+  const FONT_FAMILY = (input.get('字体 FONT_FAMILY') as string).trim();
+  const PADDING_INSIDE = input.get('内边距 PADDING_INSIDE') as boolean;
+  const PADDING_TOP = input.get('上边距 PADDING_TOP') as number;
+  const PADDING_BOTTOM = input.get('下边距 PADDING_BOTTOM') as number;
+  const PADDING_LEFT = input.get('左边距 PADDING_LEFT') as number;
+  const PADDING_RIGHT = input.get('右边距 PADDING_RIGHT') as number;
 
   const canvas = sandbox(photo, {
     targetRatio: store.ratio,

@@ -72,21 +72,21 @@ const ExportSettingsPage = () => {
         <CreateOverrideMetadataListItem />
       </List>
 
-      <List strongIos inset>
+      {/* <List strongIos inset>
         <BugReportListItem />
         <ReleasesListItem />
-      </List>
+      </List> */}
 
-      <List strongIos inset>
+      {/* <List strongIos inset>
         <PrivacyPolicyListItem />
         <TermAndConditionsListItem />
-      </List>
+      </List> */}
 
       <List strongIos inset>
-        <SponsorsListItem />
-        <LabListItem />
+        {/* <SponsorsListItem /> */}
+        {/* <LabListItem /> */}
         <CurrentVersionListItem />
-        <BetaListItem />
+        {/* <BetaListItem /> */}
       </List>
 
       <Tabbar labels={true} icons={true} className="left-0 bottom-0 fixed">

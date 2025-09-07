@@ -43,22 +43,22 @@ const useThemeStore = create<ThemeStore>((set) => ({
 }));
 
 const themes = [
-  { name: 'No frame', func: NO_FRAME_THEME_FUNC, options: NO_FRAME_OPTIONS },
-  { name: 'Just frame', func: JUST_FRAME_FUNC, options: JUST_FRAME_OPTIONS },
-  { name: 'Simple', func: SIMPLE_FUNC, options: SIMPLE_OPTIONS },
-  { name: 'Strap', func: STRAP_FUNC, options: STRAP_OPTIONS },
-  { name: 'One line', func: ONE_LINE_FUNC, options: ONE_LINE_OPTIONS },
-  { name: 'Two line', func: TWO_LINE_FUNC, options: TWO_LINE_OPTIONS },
-  { name: 'Shot on one line', func: SHOT_ON_ONE_LINE_FUNC, options: SHOT_ON_ONE_LINE_OPTIONS },
-  { name: 'Shot on two line', func: SHOT_ON_TWO_LINE_FUNC, options: SHOT_ON_TWO_LINE_OPTIONS },
-  { name: 'Film', func: FILM_FUNC, options: FILM_OPTIONS },
-  { name: 'Monitor', func: MONITOR_FUNC, options: MONITOR_OPTIONS },
-  { name: 'Lightroom', func: LIGHTROOM_FUNC, options: LIGHTROOM_OPTIONS },
-  { name: 'Custom One Line', func: CUSTOM_ONE_LINE_FUNC, options: CUSTOM_ONE_LINE_OPTIONS },
-  { name: 'Custom Two Line', func: CUSTOM_TWO_LINE_FUNC, options: CUSTOM_TWO_LINE_OPTIONS },
-  { name: 'Poster', func: POSTER_FUNC, options: POSTER_OPTIONS },
-  { name: 'Tip', func: TIP_FUNC, options: TIP_OPTIONS },
-  { name: 'Cinema Scope', func: CINEMASCOPE_FUNC, options: CINEMASCOPE_OPTIONS },
+  { name: '无边框 No frame', func: NO_FRAME_THEME_FUNC, options: NO_FRAME_OPTIONS },
+  { name: '仅边框 Just frame', func: JUST_FRAME_FUNC, options: JUST_FRAME_OPTIONS },
+  { name: '简约 Simple', func: SIMPLE_FUNC, options: SIMPLE_OPTIONS },
+  { name: '表带 Strap', func: STRAP_FUNC, options: STRAP_OPTIONS },
+  { name: '单行 One line', func: ONE_LINE_FUNC, options: ONE_LINE_OPTIONS },
+  { name: '双行 Two line', func: TWO_LINE_FUNC, options: TWO_LINE_OPTIONS },
+  { name: '单行拍摄信息 Shot on one line', func: SHOT_ON_ONE_LINE_FUNC, options: SHOT_ON_ONE_LINE_OPTIONS },
+  { name: '双行拍摄信息 Shot on two line', func: SHOT_ON_TWO_LINE_FUNC, options: SHOT_ON_TWO_LINE_OPTIONS },
+  { name: '胶片 Film', func: FILM_FUNC, options: FILM_OPTIONS },
+  { name: '监视器 Monitor', func: MONITOR_FUNC, options: MONITOR_OPTIONS },
+  { name: 'Lightroom风格 Lightroom', func: LIGHTROOM_FUNC, options: LIGHTROOM_OPTIONS },
+  { name: '自定义单行 Custom One Line', func: CUSTOM_ONE_LINE_FUNC, options: CUSTOM_ONE_LINE_OPTIONS },
+  { name: '自定义双行 Custom Two Line', func: CUSTOM_TWO_LINE_FUNC, options: CUSTOM_TWO_LINE_OPTIONS },
+  { name: '海报 Poster', func: POSTER_FUNC, options: POSTER_OPTIONS },
+  { name: '提示 Tip', func: TIP_FUNC, options: TIP_OPTIONS },
+  { name: '电影宽银幕 Cinema Scope', func: CINEMASCOPE_FUNC, options: CINEMASCOPE_OPTIONS },
 ];
 
 export default themes;

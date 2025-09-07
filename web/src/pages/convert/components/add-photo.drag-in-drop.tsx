@@ -66,7 +66,7 @@ const AddPhotoDragInDrop = () => {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          height: '20rem',
+          height: '10rem',
           border: `2px dashed ${darkMode ? '#fff' : '#000'}`,
           borderRadius: '0.5rem',
           margin: '32px',

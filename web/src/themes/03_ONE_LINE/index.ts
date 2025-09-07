@@ -6,41 +6,41 @@ import { ThemeOption, ThemeOptionInput } from '../../pages/theme/types/theme-opt
 import Font from '../../fonts';
 
 const ONE_LINE_OPTIONS: ThemeOption[] = [
-  { id: 'BACKGROUND_COLOR', type: 'color', default: '#ffffff', description: '#ffffff is white, #000000 is black' },
-  { id: 'PADDING_INSIDE', type: 'boolean', default: false, description: 'enable to use inside padding' },
-  { id: 'PADDING_TOP', type: 'number', default: 100, description: 'px' },
-  { id: 'PADDING_BOTTOM', type: 'number', default: 250, description: 'px' },
-  { id: 'PADDING_LEFT', type: 'number', default: 100, description: 'px' },
-  { id: 'PADDING_RIGHT', type: 'number', default: 100, description: 'px' },
-  { id: 'TEXT_COLOR', type: 'color', default: '#000000', description: '#ffffff is white, #000000 is black' },
-  { id: 'TEXT_ALPHA', type: 'range-slider', default: 1, min: 0, max: 1, step: 0.01, description: '0 - 1' },
-  { id: 'TEXT_ALIGN', type: 'select', options: ['center', 'right', 'left'], default: 'center', description: 'left or center or right' },
-  { id: 'FONT_STYLE', type: 'select', options: ['normal', 'italic'], default: 'normal', description: 'normal or italic' },
-  { id: 'FONT_WEIGHT', type: 'range-slider', min: 100, max: 900, step: 100, default: 300, description: '100 - 900' },
-  { id: 'FONT_SIZE', type: 'number', default: 70, description: 'px' },
-  { id: 'FONT_FAMILY', type: 'select', options: ['Barlow', ...Object.values(Font)], default: 'Barlow', description: 'ex. din-alternate-bold, digital-7, Barlow, Arial, sans-serif' },
-  { id: 'TOP_LABEL', type: 'string', default: '', description: 'ex. @username' },
-  { id: 'DIVIDER', type: 'string', default: '∙', description: 'ex. |' },
-  { id: 'TEMPLATE', type: 'string', default: '{MAKER}{BODY}{LENS}{ISO}{MM}{F}{SEC}' },
+  { id: '背景颜色 BACKGROUND_COLOR', type: 'color', default: '#ffffff', description: '#ffffff is white, #000000 is black' },
+  { id: '内边距 PADDING_INSIDE', type: 'boolean', default: false, description: 'enable to use inside padding' },
+  { id: '上边距 PADDING_TOP', type: 'number', default: 100, description: 'px' },
+  { id: '下边距 PADDING_BOTTOM', type: 'number', default: 250, description: 'px' },
+  { id: '左边距 PADDING_LEFT', type: 'number', default: 100, description: 'px' },
+  { id: '右边距 PADDING_RIGHT', type: 'number', default: 100, description: 'px' },
+  { id: '文字颜色 TEXT_COLOR', type: 'color', default: '#000000', description: '#ffffff is white, #000000 is black' },
+  { id: '文字透明度 TEXT_ALPHA', type: 'range-slider', default: 1, min: 0, max: 1, step: 0.01, description: '0 - 1' },
+  { id: '文字对齐方式 TEXT_ALIGN', type: 'select', options: ['center', 'right', 'left'], default: 'center', description: 'left or center or right' },
+  { id: '字体样式 FONT_STYLE', type: 'select', options: ['normal', 'italic'], default: 'normal', description: 'normal or italic' },
+  { id: '字体粗细 FONT_WEIGHT', type: 'range-slider', min: 100, max: 900, step: 100, default: 300, description: '100 - 900' },
+  { id: '字体大小 FONT_SIZE', type: 'number', default: 70, description: 'px' },
+  { id: '字体 FONT_FAMILY', type: 'select', options: ['Barlow', ...Object.values(Font)], default: 'Barlow', description: 'ex. din-alternate-bold, digital-7, Barlow, Arial, sans-serif' },
+  { id: '顶部标签 TOP_LABEL', type: 'string', default: '', description: 'ex. @username' },
+  { id: '分隔符 DIVIDER', type: 'string', default: '∙', description: 'ex. |' },
+  { id: '模板 TEMPLATE', type: 'string', default: '{MAKER}{BODY}{LENS}{ISO}{MM}{F}{SEC}' },
 ];
 
 const ONE_LINE_FUNC: ThemeFunc = (photo: Photo, input: ThemeOptionInput, store: Store) => {
-  const BACKGROUND_COLOR = (input.get('BACKGROUND_COLOR') as string).trim();
-  const PADDING_INSIDE = input.get('PADDING_INSIDE') as boolean;
-  const PADDING_TOP = input.get('PADDING_TOP') as number;
-  const PADDING_BOTTOM = input.get('PADDING_BOTTOM') as number;
-  const PADDING_LEFT = input.get('PADDING_LEFT') as number;
-  const PADDING_RIGHT = input.get('PADDING_RIGHT') as number;
-  const TEXT_COLOR = input.get('TEXT_COLOR') as string;
-  const TEXT_ALPHA = input.get('TEXT_ALPHA') as number;
-  const TEXT_ALIGN = (input.get('TEXT_ALIGN') as string).trim() as CanvasTextAlign;
-  const FONT_STYLE = (input.get('FONT_STYLE') as string).trim();
-  const FONT_WEIGHT = input.get('FONT_WEIGHT') as number;
-  const FONT_SIZE = input.get('FONT_SIZE') as number;
-  const FONT_FAMILY = (input.get('FONT_FAMILY') as string).trim();
-  const TOP_LABEL = (input.get('TOP_LABEL') as string).trim();
-  const DIVIDER = (input.get('DIVIDER') as string).trim();
-  const TEMPLATE = (input.get('TEMPLATE') as string).trim();
+  const BACKGROUND_COLOR = (input.get('背景颜色 BACKGROUND_COLOR') as string).trim();
+  const PADDING_INSIDE = input.get('内边距 PADDING_INSIDE') as boolean;
+  const PADDING_TOP = input.get('上边距 PADDING_TOP') as number;
+  const PADDING_BOTTOM = input.get('下边距 PADDING_BOTTOM') as number;
+  const PADDING_LEFT = input.get('左边距 PADDING_LEFT') as number;
+  const PADDING_RIGHT = input.get('右边距 PADDING_RIGHT') as number;
+  const TEXT_COLOR = input.get('文字颜色 TEXT_COLOR') as string;
+  const TEXT_ALPHA = input.get('文字透明度 TEXT_ALPHA') as number;
+  const TEXT_ALIGN = (input.get('文字对齐方式 TEXT_ALIGN') as string).trim() as CanvasTextAlign;
+  const FONT_STYLE = (input.get('字体样式 FONT_STYLE') as string).trim();
+  const FONT_WEIGHT = input.get('字体粗细 FONT_WEIGHT') as number;
+  const FONT_SIZE = input.get('字体大小 FONT_SIZE') as number;
+  const FONT_FAMILY = (input.get('字体 FONT_FAMILY') as string).trim();
+  const TOP_LABEL = (input.get('顶部标签 TOP_LABEL') as string).trim();
+  const DIVIDER = (input.get('分隔符 DIVIDER') as string).trim();
+  const TEMPLATE = (input.get('模板 TEMPLATE') as string).trim();
 
   const canvas = sandbox(photo, {
     targetRatio: store.ratio,

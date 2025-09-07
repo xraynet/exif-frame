@@ -6,51 +6,51 @@ import { ThemeOption, ThemeOptionInput } from '../../pages/theme/types/theme-opt
 import Font from '../../fonts';
 
 const POSTER_OPTIONS: ThemeOption[] = [
-  { id: 'DARK_MODE', type: 'boolean', default: false, description: 'enable to use dark mode' },
-  { id: 'PADDING_TOP', type: 'number', default: 400, description: 'px' },
-  { id: 'PADDING_BOTTOM', type: 'number', default: 400, description: 'px' },
-  { id: 'PADDING_LEFT', type: 'number', default: 150, description: 'px' },
-  { id: 'TEXT1', type: 'string', default: '2001.01.01' },
-  { id: 'TEXT2', type: 'string', default: 'Lorem Ipsum' },
-  { id: 'TEXT3', type: 'string', default: 'dolor sit amet, consectetur' },
-  { id: 'TEXT4', type: 'string', default: 'White House' },
-  { id: 'TEXT5', type: 'string', default: '1600 Pennsylvania Avenue NW, Washington, DC 20500' },
-  { id: 'TEXT1_SIZE', type: 'number', default: 80, description: 'px' },
-  { id: 'TEXT1_WEIGHT', type: 'range-slider', min: 100, max: 900, step: 100, default: 300, description: '100 ~ 900' },
-  { id: 'TEXT2_SIZE', type: 'number', default: 200, description: 'px' },
-  { id: 'TEXT2_WEIGHT', type: 'range-slider', min: 100, max: 900, step: 100, default: 500, description: '100 ~ 900' },
-  { id: 'TEXT3_SIZE', type: 'number', default: 200, description: 'px' },
-  { id: 'TEXT3_WEIGHT', type: 'range-slider', min: 100, max: 900, step: 100, default: 500, description: '100 ~ 900' },
-  { id: 'TEXT4_SIZE', type: 'number', default: 150, description: 'px' },
-  { id: 'TEXT4_WEIGHT', type: 'range-slider', min: 100, max: 900, step: 100, default: 500, description: '100 ~ 900' },
-  { id: 'TEXT5_SIZE', type: 'number', default: 80, description: 'px' },
-  { id: 'TEXT5_WEIGHT', type: 'range-slider', min: 100, max: 900, step: 100, default: 300, description: '100 ~ 900' },
-  { id: 'FONT_FAMILY', type: 'select', options: ['Barlow', ...Object.values(Font)], default: 'Barlow', description: 'ex. din-alternate-bold, digital-7, Barlow, Arial, sans-serif' },
-  { id: 'SHADOW_SIZE', type: 'number', default: 10, description: '0 ~ 100' },
+  { id: '深色模式 DARK_MODE', type: 'boolean', default: false, description: 'enable to use dark mode' },
+  { id: '上边距 PADDING_TOP', type: 'number', default: 400, description: 'px' },
+  { id: '下边距 PADDING_BOTTOM', type: 'number', default: 400, description: 'px' },
+  { id: '左边距 PADDING_LEFT', type: 'number', default: 150, description: 'px' },
+  { id: '文本1 TEXT1', type: 'string', default: '2001.01.01' },
+  { id: '文本2 TEXT2', type: 'string', default: 'Lorem Ipsum' },
+  { id: '文本3 TEXT3', type: 'string', default: 'dolor sit amet, consectetur' },
+  { id: '文本4 TEXT4', type: 'string', default: 'White House' },
+  { id: '文本5 TEXT5', type: 'string', default: '1600 Pennsylvania Avenue NW, Washington, DC 20500' },
+  { id: '文本1字号 TEXT1_SIZE', type: 'number', default: 80, description: 'px' },
+  { id: '文本1粗细 TEXT1_WEIGHT', type: 'range-slider', min: 100, max: 900, step: 100, default: 300, description: '100 ~ 900' },
+  { id: '文本2字号 TEXT2_SIZE', type: 'number', default: 200, description: 'px' },
+  { id: '文本2粗细 TEXT2_WEIGHT', type: 'range-slider', min: 100, max: 900, step: 100, default: 500, description: '100 ~ 900' },
+  { id: '文本3字号 TEXT3_SIZE', type: 'number', default: 200, description: 'px' },
+  { id: '文本3粗细 TEXT3_WEIGHT', type: 'range-slider', min: 100, max: 900, step: 100, default: 500, description: '100 ~ 900' },
+  { id: '文本4字号 TEXT4_SIZE', type: 'number', default: 150, description: 'px' },
+  { id: '文本4粗细 TEXT4_WEIGHT', type: 'range-slider', min: 100, max: 900, step: 100, default: 500, description: '100 ~ 900' },
+  { id: '文本5字号 TEXT5_SIZE', type: 'number', default: 80, description: 'px' },
+  { id: '文本5粗细 TEXT5_WEIGHT', type: 'range-slider', min: 100, max: 900, step: 100, default: 300, description: '100 ~ 900' },
+  { id: '字体 FONT_FAMILY', type: 'select', options: ['Barlow', ...Object.values(Font)], default: 'Barlow', description: 'ex. din-alternate-bold, digital-7, Barlow, Arial, sans-serif' },
+  { id: '阴影 SHADOW_SIZE', type: 'number', default: 10, description: '0 ~ 100' },
 ];
 
 const POSTER_FUNC: ThemeFunc = (photo: Photo, input: ThemeOptionInput, store: Store) => {
-  const DARK_MODE = input.get('DARK_MODE') as boolean;
-  const PADDING_TOP = input.get('PADDING_TOP') as number;
-  const PADDING_BOTTOM = input.get('PADDING_BOTTOM') as number;
-  const PADDING_LEFT = input.get('PADDING_LEFT') as number;
-  const TEXT1 = (input.get('TEXT1') as string).trim();
-  const TEXT2 = (input.get('TEXT2') as string).trim();
-  const TEXT3 = (input.get('TEXT3') as string).trim();
-  const TEXT4 = (input.get('TEXT4') as string).trim();
-  const TEXT5 = (input.get('TEXT5') as string).trim();
-  const TEXT1_SIZE = input.get('TEXT1_SIZE') as number;
-  const TEXT1_WEIGHT = input.get('TEXT1_WEIGHT') as number;
-  const TEXT2_SIZE = input.get('TEXT2_SIZE') as number;
-  const TEXT2_WEIGHT = input.get('TEXT2_WEIGHT') as number;
-  const TEXT3_SIZE = input.get('TEXT3_SIZE') as number;
-  const TEXT3_WEIGHT = input.get('TEXT3_WEIGHT') as number;
-  const TEXT4_SIZE = input.get('TEXT4_SIZE') as number;
-  const TEXT4_WEIGHT = input.get('TEXT4_WEIGHT') as number;
-  const TEXT5_SIZE = input.get('TEXT5_SIZE') as number;
-  const TEXT5_WEIGHT = input.get('TEXT5_WEIGHT') as number;
-  const FONT_FAMILY = (input.get('FONT_FAMILY') as string).trim();
-  const SHADOW_SIZE = input.get('SHADOW_SIZE') as number;
+  const DARK_MODE = input.get('深色模式 DARK_MODE') as boolean;
+  const PADDING_TOP = input.get('上边距 PADDING_TOP') as number;
+  const PADDING_BOTTOM = input.get('下边距 PADDING_BOTTOM') as number;
+  const PADDING_LEFT = input.get('左边距 PADDING_LEFT') as number;
+  const TEXT1 = (input.get('文本1 TEXT1') as string).trim();
+  const TEXT2 = (input.get('文本2 TEXT2') as string).trim();
+  const TEXT3 = (input.get('文本3 TEXT3') as string).trim();
+  const TEXT4 = (input.get('文本4 TEXT4') as string).trim();
+  const TEXT5 = (input.get('文本5 TEXT5') as string).trim();
+  const TEXT1_SIZE = input.get('文本1字号 TEXT1_SIZE') as number;
+  const TEXT1_WEIGHT = input.get('文本1粗细 TEXT1_WEIGHT') as number;
+  const TEXT2_SIZE = input.get('文本2字号 TEXT2_SIZE') as number;
+  const TEXT2_WEIGHT = input.get('文本2粗细 TEXT2_WEIGHT') as number;
+  const TEXT3_SIZE = input.get('文本3字号 TEXT3_SIZE') as number;
+  const TEXT3_WEIGHT = input.get('文本3粗细 TEXT3_WEIGHT') as number;
+  const TEXT4_SIZE = input.get('文本4字号 TEXT4_SIZE') as number;
+  const TEXT4_WEIGHT = input.get('文本4粗细 TEXT4_WEIGHT') as number;
+  const TEXT5_SIZE = input.get('文本5字号 TEXT5_SIZE') as number;
+  const TEXT5_WEIGHT = input.get('文本5粗细 TEXT5_WEIGHT') as number;
+  const FONT_FAMILY = (input.get('字体 FONT_FAMILY') as string).trim();
+  const SHADOW_SIZE = input.get('阴影 SHADOW_SIZE') as number;
 
   const canvas = sandbox(photo, {
     targetRatio: store.ratio,

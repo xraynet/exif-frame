@@ -5,23 +5,23 @@ import { ThemeFunc } from '../../core/drawing/theme';
 import { ThemeOption, ThemeOptionInput } from '../../pages/theme/types/theme-option';
 
 const SHOT_ON_TWO_LINE_OPTIONS: ThemeOption[] = [
-  { id: 'BACKGROUND_COLOR', type: 'color', default: '#ffffff', description: '#ffffff is white, #000000 is black' },
-  { id: 'PADDING_TOP', type: 'number', default: 200, description: 'px' },
-  { id: 'PADDING_BOTTOM', type: 'number', default: 300, description: 'px' },
-  { id: 'PADDING_LEFT', type: 'number', default: 50, description: 'px' },
-  { id: 'PADDING_RIGHT', type: 'number', default: 50, description: 'px' },
-  { id: 'TEXT_COLOR', type: 'color', default: '#000000', description: '#ffffff is white, #000000 is black' },
-  { id: 'TOP_LABEL', type: 'string', default: '', description: 'ex. @username' },
+  { id: '背景颜色 BACKGROUND_COLOR', type: 'color', default: '#ffffff', description: '#ffffff is white, #000000 is black' },
+  { id: '上边距 PADDING_TOP', type: 'number', default: 200, description: 'px' },
+  { id: '下边距 PADDING_BOTTOM', type: 'number', default: 300, description: 'px' },
+  { id: '左边距 PADDING_LEFT', type: 'number', default: 50, description: 'px' },
+  { id: '右边距 PADDING_RIGHT', type: 'number', default: 50, description: 'px' },
+  { id: '文字颜色 TEXT_COLOR', type: 'color', default: '#000000', description: '#ffffff is white, #000000 is black' },
+  { id: '顶部标签 TOP_LABEL', type: 'string', default: '', description: 'ex. @username' },
 ];
 
 const SHOT_ON_TWO_LINE_FUNC: ThemeFunc = (photo: Photo, input: ThemeOptionInput, store: Store) => {
-  const BACKGROUND_COLOR = (input.get('BACKGROUND_COLOR') as string).trim();
-  const PADDING_TOP = input.get('PADDING_TOP') as number;
-  const PADDING_BOTTOM = input.get('PADDING_BOTTOM') as number;
-  const PADDING_LEFT = input.get('PADDING_LEFT') as number;
-  const PADDING_RIGHT = input.get('PADDING_RIGHT') as number;
-  const TEXT_COLOR = input.get('TEXT_COLOR') as string;
-  const TOP_LABEL = (input.get('TOP_LABEL') as string).trim();
+  const BACKGROUND_COLOR = (input.get('背景颜色 BACKGROUND_COLOR') as string).trim();
+  const PADDING_TOP = input.get('上边距 PADDING_TOP') as number;
+  const PADDING_BOTTOM = input.get('下边距 PADDING_BOTTOM') as number;
+  const PADDING_LEFT = input.get('左边距 PADDING_LEFT') as number;
+  const PADDING_RIGHT = input.get('右边距 PADDING_RIGHT') as number;
+  const TEXT_COLOR = input.get('文字颜色 TEXT_COLOR') as string;
+  const TOP_LABEL = (input.get('顶部标签 TOP_LABEL') as string).trim();
 
   const canvas = sandbox(photo, {
     targetRatio: store.ratio,
